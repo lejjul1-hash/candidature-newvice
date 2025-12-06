@@ -1,79 +1,86 @@
 body {
     margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
     background: #050506;
-    color: white;
+    color: #f2f2f7;
+    font-family: Arial, sans-serif;
 }
 
 .container {
-    width: 90%;
-    max-width: 600px;
+    max-width: 750px;
     margin: 40px auto;
-    background: #0f1113;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
 }
 
-h1, h2 {
+.title {
     text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+    font-weight: 900;
+    color: #ff4040;
+    text-shadow: 0 0 15px #ff0000;
+}
+
+.card {
+    background: #0e0e10;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(255,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.03);
 }
 
 label {
-    margin-top: 15px;
     display: block;
-    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: 600;
 }
 
-input, textarea, select {
+input, textarea {
     width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border-radius: 8px;
-    border: none;
-    background: #1c1f24;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
     color: white;
+    resize: none;
+    outline: none;
 }
 
 textarea {
-    height: 90px;
-    resize: none;
+    height: 85px;
 }
 
-.next-btn, .back-btn, .send-btn {
-    margin-top: 20px;
-    width: 48%;
-    padding: 12px;
+.btn, .btn-secondary {
+    width: 100%;
+    padding: 14px;
+    margin-top: 18px;
     border: none;
-    cursor: pointer;
-    color: white;
     border-radius: 10px;
-    font-weight: bold;
-    transition: .2s;
+    font-size: 17px;
+    cursor: pointer;
+    font-weight: 700;
 }
 
-.next-btn, .send-btn {
+.btn {
     background: linear-gradient(90deg, #ff1e1e, #ff6b6b);
-    box-shadow: 0 0 20px rgba(255, 30, 30, 0.4);
+    color: white;
+    box-shadow: 0 0 15px rgba(255,0,0,0.4);
 }
 
-.back-btn {
-    background: linear-gradient(90deg, #444, #666);
+.btn:hover {
+    box-shadow: 0 0 25px rgba(255,0,0,0.8);
 }
 
-.next-btn:hover, .send-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(255, 0, 0, .6);
+.btn-secondary {
+    background: #222;
+    color: #aaa;
 }
 
 .btns {
     display: flex;
-    justify-content: space-between;
+    gap: 12px;
 }
 
-#status {
-    margin-top: 15px;
-    text-align: center;
-    font-weight: bold;
+.radio-group input {
+    margin-right: 6px;
 }
