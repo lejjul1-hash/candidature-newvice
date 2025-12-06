@@ -78,12 +78,12 @@ async function sendForm() {
     ip
   };
 
-  // Sauvegarde pour admin
+  // Sauvegarde pour admin panel
   let list = JSON.parse(localStorage.getItem("candidatures") || "[]");
   list.push(data);
   localStorage.setItem("candidatures", JSON.stringify(list));
 
-  // EMBED
+  // EMBED SANS L’IP
   const embed = {
     content: `<@&${ROLE_ID}> Nouvelle candidature reçue !`,
     embeds: [
@@ -104,9 +104,7 @@ async function sendForm() {
           { name:"⭐ Qualités", value:data.qualites, inline:false },
           { name:"📘 Définition du rôle", value:data.definition, inline:false },
           { name:"🏆 Expérience", value:data.experience, inline:false },
-          { name:"➕ Extra", value:data.extra || "Aucun", inline:false },
-
-          { name:"🌐 IP", value:"`" + data.ip + "`", inline:true }
+          { name:"➕ Extra", value:data.extra || "Aucun", inline:false }
         ],
         footer:{ text:"Système Glast — Candidature envoyée" }
       }
@@ -125,7 +123,7 @@ async function sendForm() {
 }
 
 // ====================
-// PANEL ADMIN
+// PANEL ADMIN (AMÉLIORÉ)
 // ====================
 function openAdmin() {
   const code = prompt("Entrez le code admin :");
@@ -147,7 +145,7 @@ function openAdmin() {
   list.forEach(c => {
     panel.innerHTML += `
       <div class="admin-entry">
-        <strong>${c.discord}</strong><br>
+        <strong>Pseudo Discord :</strong> ${c.discord}<br>
         <strong>IP :</strong> ${c.ip}<br>
         <strong>Categorie :</strong> ${c.categorie}<br>
         <strong>Motivations :</strong> ${c.motivations}<br>
