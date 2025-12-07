@@ -40,7 +40,6 @@ async function sendForm() {
         extra: extra.value
     };
 
-    // ⭐⭐⭐ EMBED AMÉLIORÉ ET DÉTAILLÉ (sans IP) ⭐⭐⭐
     const payload = {
         content: `<@&${ROLE_ID}>`,
         embeds: [{
@@ -58,35 +57,12 @@ async function sendForm() {
 
                 { name:"🕒 Disponibilités", value:data.dispos },
 
-                { 
-                    name:"🔥 Motivations", 
-                    value:data.motivations || "Non renseigné"
-                },
-
-                { 
-                    name:"❓ Pourquoi lui ?", 
-                    value:data.why || "Non renseigné"
-                },
-
-                { 
-                    name:"⭐ Qualités", 
-                    value:data.qualites || "Non renseigné"
-                },
-
-                { 
-                    name:"🛡 Définition du rôle", 
-                    value:data.definition || "Non renseigné"
-                },
-
-                { 
-                    name:"📚 Expérience", 
-                    value:data.experience || "Aucune"
-                },
-
-                { 
-                    name:"➕ Informations supplémentaires", 
-                    value:data.extra || "Aucune"
-                }
+                { name:"🔥 Motivations", value:data.motivations || "Non renseigné" },
+                { name:"❓ Pourquoi lui ?", value:data.why || "Non renseigné" },
+                { name:"⭐ Qualités", value:data.qualites || "Non renseigné" },
+                { name:"🛡 Définition du rôle", value:data.definition || "Non renseigné" },
+                { name:"📚 Expérience", value:data.experience || "Aucune" },
+                { name:"➕ Informations supplémentaires", value:data.extra || "Aucune" }
             ],
             footer: { text: "💼 Système de candidature - Glast" },
             timestamp: new Date()
@@ -143,8 +119,3 @@ function clearAll(){
     localStorage.removeItem("candidatures");
     adminPanel.innerHTML = "<p style='color:#ff4444;font-weight:700'>Toutes les candidatures ont été supprimées.</p>";
 }
-
-
-
-
-
